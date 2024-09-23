@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+// 请求消息
+message ReqSignup {
+    string username = 1;
+    string password = 2;
+}
+
+// 响应消息
+message RespSignup {
+    int32 code = 1;
+    string msg = 2;
+}
+
+// 服务定义
+service UserService {
+    rpc Signup(ReqSignup) returns (RespSignup) {}
+}
+
